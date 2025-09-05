@@ -1,7 +1,7 @@
 import json
 from abc import ABC, abstractmethod
 import xml.etree.ElementTree as Et
-from app.book import Book
+from book import Book
 
 
 class Serializer(ABC):
@@ -11,7 +11,7 @@ class Serializer(ABC):
 
 
 class JsonSerializer(Serializer):
-    def serializer(self, book: Book) -> str:
+    def serialize(self, book: Book) -> str:
         return json.dumps({"title": book.title, "content": book.content})
 
 
